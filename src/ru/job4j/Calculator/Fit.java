@@ -8,7 +8,7 @@ public class Fit {
     }
 
     public static double womenWeight(short height) {
-        return (float) ((height - 100) * 1.15);
+        return  (height - 100) * 1.15;
     }
 
     public static void main(String[] args) {
