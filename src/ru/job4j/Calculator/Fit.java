@@ -3,11 +3,11 @@ package ru.job4j.Calculator;
 import java.util.Calendar;
 
 public class Fit {
-    public static float manWeight(short height) {
+    public static double manWeight(short height) {
         return (float) ((height - 100) * 1.15);
     }
 
-    public static float womenWeight(short height) {
+    public static double womenWeight(short height) {
         return (float) ((height - 100) * 1.15);
     }
 
