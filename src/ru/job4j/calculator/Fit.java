@@ -1,6 +1,4 @@
-package ru.job4j.Calculator;
-
-import java.util.Calendar;
+package ru.job4j.calculator;
 
 public class Fit {
     public static double manWeight(short height) {
