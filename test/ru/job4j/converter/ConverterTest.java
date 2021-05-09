@@ -16,6 +16,7 @@ public class ConverterTest {
 
     @Test
     public void whenConvert180RblThen3Dlr() {
+        // Проверяем работы метода, а не соответствие курса в методе реальному.
         int in = 180;
         int expected = 3;
         int out = Converter.rubleToDollar(in);
