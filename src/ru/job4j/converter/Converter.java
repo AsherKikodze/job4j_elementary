@@ -10,9 +10,15 @@ public class Converter {
     }
 
     public static void main(String[] args) {
-        float rub = 140;
-        //Converter.rubleToEuro(rub);
-        System.out.println(rub + " rubles are " + Converter.rubleToEuro(rub) + " euro");
-        System.out.println(rub + " rubles are " + Converter.rubleToDollar(rub) + " USD");
+        float in = 140;
+        float expected = 2;
+        float out = Converter.rubleToEuro(in);
+        boolean passed = expected == out;
+        System.out.println("140 rubles are 2 euro. Test result : " + passed);
+        //Предположим, что реальный курс доллара 80
+        in = 240;
+        expected = 3;
+        passed = expected == Converter.rubleToDollar(in);
+        System.out.println("160 rubles are 2 USD. Test result : " + passed);
     }
 }
