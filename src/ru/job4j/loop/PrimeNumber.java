@@ -5,7 +5,7 @@ public class PrimeNumber {
         int c = 0;
         for (int i = 2; i <= finish; i++) {
             if (CheckPrimeNumber.check(i)) {
-                c += 1;
+                 c += 1;
             }
         }
         return c;
