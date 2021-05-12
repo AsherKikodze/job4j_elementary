@@ -8,6 +8,13 @@ public class SwitchArray {
         return array;
     }
 
+    public static int[] swap(int[] array, int dest, int source) {
+        int temp = array[source];
+        array[source] = array[dest];
+        array[dest] = temp;
+        return array;
+    }
+
     public static void main(String[] args) {
         int[] nums = new int[] {1, 2, 3, 4, 5, 6, 7, 8};
         int[] res = SwitchArray.swapBorder(nums);
