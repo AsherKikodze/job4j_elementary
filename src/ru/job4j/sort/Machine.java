@@ -25,13 +25,12 @@ public class Machine {
         int k = 0;
         int rem = money - price;
         while (rem > 0) {
-            if (rem >= coins[k]) {
-                rsl[size] = coins[k];
-                size++;
-                rem = rem - coins[k];
-            } else {
+            if (rem - coins[k] < 0) {
                 k++;
             }
+            rsl[size] = coins[k];
+            size++;
+            rem = rem - coins[k];
         }
         return Arrays.copyOf(rsl, size);
     }
