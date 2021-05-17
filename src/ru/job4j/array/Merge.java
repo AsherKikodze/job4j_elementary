@@ -1,13 +1,13 @@
 package ru.job4j.array;
 
 public class Merge {
-    public static  int[] merge(int[] left, int[] right) {
+    public static  int[] merge2(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
         boolean condition = true;
         int i = 0;
         int j = 0;
         int k = 0;
-        while (true) {
+        while (condition) {
             if ((i < left.length) && (j < right.length)) { // Оба массива еще не пройдены
                 if (left[i] <= right[j]) { // Если значение в левом не больше правого, ставим левый
                     rsl[k] = left[i];
@@ -23,15 +23,44 @@ public class Merge {
                     rsl[k] = right[l];
                     k++;
                 }
-                break;
+                condition = false;
             } else { // Пройден правый массив, дополняем остатками левого
                 for (int l = i; l < left.length; l++) {
                     rsl[k] = left[l];
                     k++;
                 }
-                break;
+                condition = false;
             }
 
+        }
+        return rsl;
+    }
+
+    public static  int[] merge(int[] left, int[] right) {
+        int[] rsl = new int[left.length + right.length];
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (k < left.length + right.length) {
+            if ((i < left.length) && (j < right.length)) { // Оба массива еще не пройдены
+                if (left[i] <= right[j]) { // Если значение в левом не больше правого, ставим левый
+                    rsl[k] = left[i];
+                    k++;
+                    i++;
+                } else { // Если значение в правом меньше левого, ставим левый
+                    rsl[k] = right[j];
+                    k++;
+                    j++;
+                }
+            } else if (j >= right.length) {
+                rsl[k] = left[i];
+                k++;
+                i++;
+            } else {
+                rsl[k] = right[j];
+                k++;
+                j++;
+            }
         }
         return rsl;
     }
