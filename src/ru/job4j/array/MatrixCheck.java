@@ -21,7 +21,6 @@ public class MatrixCheck {
             }
         }
         return res;
-
     }
 
     public static char[] extractDiagonal(char[][] arr) {

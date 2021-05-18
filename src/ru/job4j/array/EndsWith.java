@@ -8,7 +8,6 @@ public class EndsWith {
                 res = false;
                 break;
             }
-
         }
         return res;
     }
