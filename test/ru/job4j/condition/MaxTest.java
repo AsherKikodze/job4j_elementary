@@ -34,4 +34,24 @@ public class MaxTest {
         Assert.assertEquals(expected, out);
     }
 
+    @Test
+    public void maxOneTwoFifteen() {
+        int a = 1;
+        int b = 2;
+        int c = 15;
+        int expected = 15;
+        int out = Max.max(a, b, c);
+        Assert.assertEquals(expected, out);
+    }
+
+    @Test
+    public void testMaxTwoFifteenOneTwoHundredTwentySix() {
+        int a = 2;
+        int b = 15;
+        int c = 1;
+        int d = 256;
+        int expected = 256;
+        int out = Max.max(a, b, c, d);
+        Assert.assertEquals(expected, out);
+    }
 }
