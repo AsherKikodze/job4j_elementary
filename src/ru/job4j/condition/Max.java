@@ -17,4 +17,5 @@ public class Max {
         int res = Max.max(2, 3, 1, 256);
         System.out.println(res);
     }
+
 }
