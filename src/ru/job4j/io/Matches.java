@@ -10,17 +10,15 @@ public class Matches {
         System.out.println("Игра 11.");
         while (count > 0) {
             String player = turn ? "Первый игрок" : "Второй игрок";
-            int matches = 0;
-            while (!(matches == 1 || matches == 2 || matches == 3)) {
-                System.out.println(player + " введите число от 1 до 3:");
-                matches = Integer.parseInt(input.nextLine());
-                if (!(matches == 1 || matches == 2 || matches == 3)) {
-                    System.out.println("Число должно быть 1 или 2 или 3 !!!");
-                }
+            System.out.println(player + " введите число от 1 до 3:");
+            int matches = Integer.parseInt(input.nextLine());
+            if (matches == 1 || matches == 2 || matches == 3) {
+                count -= matches;
+                turn = !turn;
+                System.out.println("Осталось " + count + " спичек");
+            } else {
+                System.out.println("Число должно быть 1 или 2 или 3 !!! Ведите еще раз");
             }
-            count -= matches;
-            turn = !turn;
-            System.out.println("Осталось " + count + " спичек");
         }
         if (!turn) {
             System.out.println("Выиграл первый игрок");
@@ -29,3 +27,4 @@ public class Matches {
         }
     }
 }
+
