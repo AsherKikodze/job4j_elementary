@@ -1,9 +1,11 @@
 package ru.job4j.oop;
 
 public class College {
-    Freshman freshman = new Freshman();
-    Student student = (Student) freshman;
-    Object object = (Object) student;
-    Object object1 = (Object) freshman;
-    Object object2 = freshman;
+    public static void main(String[] args) {
+        Freshman freshman = new Freshman();
+        Student student = freshman;
+        Object object = student;
+        Object object1 = freshman;
+        Object object2 = freshman;
+    }
 }
