@@ -49,7 +49,7 @@ public class BankService {
         Account dstAccount = findByRequisite(destPassport, destRequisite);
         if (srcAccount == null
                 || srcAccount.getBalance() < amount
-                || dstAccount == null) return false;
+                || dstAccount == null) { return false; }
         dstAccount.setBalance(dstAccount.getBalance() + amount);
         srcAccount.setBalance(srcAccount.getBalance() - amount);
         return true;
