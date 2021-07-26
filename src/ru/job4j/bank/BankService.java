@@ -9,18 +9,13 @@ public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     public void addUser(User user) {
-        users.put(user, null);
+        List<Account> newList = new ArrayList<>();
+        users.put(user, newList);
     }
 
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user == null) return;
-        if (users.get(user) == null) {
-            List<Account> newList = new ArrayList<>();
-            newList.add(account);
-            users.put(user, newList);
-            return;
-        }
         if (!users.get(user).contains(account)) {
             users.get(user).add(account);
         }
@@ -50,13 +45,9 @@ public class BankService {
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean rsl = false;
-        User srcUser = findByPassport(srcPassport);
-        if (srcUser == null) return rsl;
         Account srcAccount = findByRequisite(srcPassport, srcRequisite);
         if (srcAccount == null) return rsl;
         if (srcAccount.getBalance() < amount) return rsl;
-        User dstUser = findByPassport(destPassport);
-        if (dstUser == null) return rsl;
         Account dstAccount = findByRequisite(destPassport, destRequisite);
         if (dstAccount == null) return rsl;
         dstAccount.setBalance(dstAccount.getBalance() + amount);
